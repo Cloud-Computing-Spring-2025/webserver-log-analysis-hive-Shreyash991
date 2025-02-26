@@ -1,7 +1,7 @@
 # Web Server Log Analysis using Apache Hive
 
 ## Project Overview
-This project analyzes web server logs using Apache Hive. The dataset consists of log entries with details such as IP address, timestamp, requested URL, HTTP status code, and user agent. The goal is to extract meaningful insights and optimize query performance using partitioning.
+This project analyzes web server logs using Apache Hive. The data is log records containing details such as IP address, timestamp, requested URL, HTTP status code, and user agent. The goal is to extract meaningful insights and optimize query performance with partitioning.
 
 ## Implementation Approach
 The analysis is performed using HiveQL queries for various tasks:
@@ -203,6 +203,7 @@ Traffic Trend Over Time:
 2024-02-01 10:16: 7 requests
 ```
 ### **Partition Information**
+Rather than traversing the entire table, Hive stores data in separate partitions by status code.
 To list all partitions:
 ```sql
 SHOW PARTITIONS web_logs_partitioned;
