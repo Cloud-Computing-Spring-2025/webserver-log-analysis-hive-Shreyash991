@@ -6,6 +6,16 @@ This project analyzes web server logs using Apache Hive. The data is log records
 ## Implementation Approach
 The analysis is performed using HiveQL queries for various tasks:
 
+
+According to code below:
+
+```
+INSERT OVERWRITE DIRECTORY 'PATH'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+```
+This code saves the output in the specified directory and separates values with a comma, similar to a CSV format.
+
 ### 1. Count Total Web Requests
 ```sql
 INSERT OVERWRITE DIRECTORY '/user/hive/warehouse/web_logs_analysis/total_requests'
